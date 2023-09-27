@@ -11,12 +11,12 @@ public class CPjJLaboratorioFinal {
         ICatalogoPeliculas catalogo = new CatalogoPeliculasImpl();
 
         while (opcion != 0) {
-            System.out.println("Elige una opcion: \n"
+            System.out.println("\nElige una opcion: \n"
                     + "1.Iniciar Catalago Peliculas\n"
                     + "2. Agregar pelicula\n"
                     + "3.Listar peliculas\n"
                     + "4.Buscar peliculas\n"
-                    + "0. Salir");
+                    + "0. Salir\n");
             opcion = Integer.parseInt(scanner.nextLine());
 
             switch (opcion) {

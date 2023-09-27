@@ -30,10 +30,10 @@ public class AccesoDatosImpl implements IAccesoDatos {
             entrada.close();
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
-            throw new LecturaDatosEx("Exception al listar peliculas" + ex.getMessage());
+            throw new LecturaDatosEx("Exception al listar peliculas " + ex.getMessage());
         } catch (IOException ex) {
             ex.printStackTrace();
-            throw new LecturaDatosEx("Exception al listar peliculas" + ex.getMessage());
+            throw new LecturaDatosEx("Exception al listar peliculas " + ex.getMessage());
         }
 
         return peliculas;
@@ -47,7 +47,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
             var salida = new PrintWriter(new FileWriter(archivo, anexar));
             salida.println(pelicula.toString());
             salida.close();
-            System.out.println("Se ha escrito informacion al archivo " + pelicula);
+            System.out.println("Se ha escrito informacion al archivo: " + pelicula);
         } catch (IOException e) {
             e.printStackTrace();
             throw new EscrituraDatosEx("Exception al escribir peliculas" + e.getMessage());
@@ -65,7 +65,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
             var indice = 1;
             while (linea != null) {
                 if (buscar != null && buscar.equalsIgnoreCase(linea)) {
-                    resultado = "Pelicula encontrada " + linea + "encontrada en el indice " + indice;
+                    resultado = "Pelicula encontrada " + linea + " en el indice " + indice;
                     break;
                 }
                 linea = entrada.readLine();
@@ -92,7 +92,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
             salida.close();
         } catch (IOException e) {
             e.printStackTrace();
-            throw new AccesoDatosEx("Exception al crear peliculas" + e.getMessage());
+            throw new AccesoDatosEx("Exception al crear peliculas " + e.getMessage());
 
         }
 
